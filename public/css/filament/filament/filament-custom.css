@@ -1,0 +1,11 @@
+/* Exemple de réglage de la taille de la police globale */
+.filament {
+    font-size: 16px; 
+}
+
+.filament input[type="text"],
+.filament input[type="email"],
+.filament textarea {
+    font-size: 18px; 
+}
+
