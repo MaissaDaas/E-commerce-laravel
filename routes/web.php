@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\Admin_loginController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -12,6 +14,15 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+Route::get('/', function () {
+    return view('login');
+});
+
+
+Route::get('showloginform', [Admin_loginController::class,'showloginform'])->name('login_form');
+Route::post('admin_login', [Admin_loginController::class,'login'])->name('admin_login');
+Route::get('logout', [Admin_loginController::class,'logout'])->name('logout');
 
 Route::get('/', function () {
     return view('welcome');

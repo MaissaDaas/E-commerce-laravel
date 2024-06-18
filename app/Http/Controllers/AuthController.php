@@ -9,6 +9,10 @@ use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
+    public function __construct() {
+        $this->middleware('auth:api', ['except' => ['login', 'register']]);
+    }
+    
     public function register(Request $request)
     {
         $validator = Validator::make($request->all(), [
@@ -59,6 +63,12 @@ class AuthController extends Controller
         $token = $user->createToken('auth-token')->plainTextToken;
     
         return response()->json(['token' => $token]);
+    }
+
+
+    public function logout() {
+        auth()->logout();
+        return response()->json(['message' => 'User successfully signed out']);
     }
     
 }
