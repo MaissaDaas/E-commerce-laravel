@@ -9,17 +9,23 @@
 
       <link rel="stylesheet" href="../css/login.css">
 
-      <title>Login form - Admin</title>
+      <title>SignIn form - Admin</title>
    </head>
    <body>
       <div class="login">
          <!-- <img src="assets/img/login-bg.png" alt="image" class="login__bg"> -->
 
-         <form action="{{ route('admin_login') }}" method="POST" class="login__form" encrypt="multipart/form-data">
-            @csrf   
+         <form action="{{ route('admin_register') }}" method="Get" class="login__form" encrypt="multipart/form-data">
+            <!-- @csrf    -->
             <h1 class="login__title">Login</h1>
 
             <div class="login__inputs">
+
+                <div class="login__box">
+                  <input type="text" placeholder="Name" required class="login__input" id="name" name="name" value="">
+                  <i class="ri-user-fill"></i>
+               </div>
+
                <div class="login__box">
                   <input type="email" placeholder="Email" required class="login__input" id="email" name="email" value="">
                   <i class="ri-mail-fill"></i>
@@ -40,10 +46,10 @@
                <a href="#" class="login__forgot">Forgot Password?</a>
             </div>
 
-            <button type="submit" class="login__button">Login</button>
+            <button type="submit" class="login__button">Save</button>
 
             <div class="login__register">
-               Don't have an account? <a href="{{ route('admin_register') }}">Register</a>
+            Already have an account? <a href="{{ route('admin_login') }}">Login</a>
             </div>
          </form>
       </div>

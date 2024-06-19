@@ -13,8 +13,6 @@ Route::middleware('admin')->group(function () {
     Route::apiResource('/user',UserController::class);
 });
 
-
-
 Route::put('/user/update_user/{id}', [UserController::class, 'update']);
 
 Route::get('/auth',function () {

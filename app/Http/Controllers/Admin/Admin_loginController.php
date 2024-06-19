@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use App\Http\Requests\LoginRequest;
 
 class Admin_loginController extends Controller
 {
@@ -23,23 +24,44 @@ class Admin_loginController extends Controller
         //     'email' => 'required|email',
         //     'password' => 'required',
         // ]);
-// dd($request->all());
-        // // Get the credentials
+
+        // dd($request->all());
+
         $credentials = $request->only('email', 'password'); 
         if (Auth::attempt($credentials)) {
             $user = Auth::user();
             if ($user->role == 'admin') {
                 dd('loged in');
+
                 // return redirect()->route('user.index');
             }
             else{
-                Auth::logout();
-                return response()->json('you are not an admin', 403);
+                dd('user');
+
+                // Auth::logout();
+                // return response()->json('you are not an admin', 403);
             }
         }
         return redirect()->route('login_form')->withErrors(['email' => 'Invalid credentials'])->withInput();
 
         //return redirect('login_form');
+    }
+
+    public function register(LoginRequest $request)
+    {
+   
+        $validated = $request->validated();
+
+        $user = User::create([
+            'name' => $validated['name'],
+            'email' => $validated['email'],
+            'password' => bcrypt($validated['password']),
+        ]);
+
+        return response()->json([
+            'message' => 'User successfully registered',
+            'user' => $user
+        ], 201);
     }
     
     public function logout()
