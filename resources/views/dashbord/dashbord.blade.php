@@ -5,12 +5,14 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Dashbord Admin</title>
+        <link rel="icon" href="images/logo.png" type="image/x-icon">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@48,400,0,0" />
         <link rel="stylesheet" href="../../css/dashbord.css">
     </head>
     <body>
         <div class="container">
             <aside>
+            <!-- <iframe src="sidebar.balade.php" frameborder="0" style="width: 100%; height: 100%;"></iframe> -->
 
                 <div class="sidebar">
                     <div class="top">
@@ -26,7 +28,7 @@
                     </div>
 
                     <div class="sous_sidebar">
-                        <a href="#">
+                        <a href="{{ route('dashbord') }}" class="active">
                             <span class="material-symbols-sharp">grid_view </span>
                             <h3>Dashbord</h3>
                         </a>
@@ -47,7 +49,7 @@
                             </ul>
                         </div> -->
 
-                        <a href="#">
+                        <a href="{{ route('categoryAdmin') }}">
                             <span class="material-symbols-sharp">category</span>
                             <h3>Categories</h3>
                         </a>
@@ -95,7 +97,7 @@
                             <h3>settings</h3>
                         </a> -->
 
-                        <a href="#">
+                        <a href="{{ route('login_form') }}">
                             <span class="material-symbols-sharp">logout </span>
                             <h3>logout</h3>
                         </a>
@@ -113,64 +115,59 @@
                 </div>
 
                 <div class="insights">
-
                     <div class="sales" style="border-radius: 2rem; margin:2rem;">
-                        <span class="material-symbols-sharp">trending_up</span>
+                        <span class="material-symbols-sharp">category</span>
                         <div class="middle">
 
                             <div class="left">
-                                <h3>Total Sales</h3>
-                                <h1>$25,024</h1>
+                                <h3>Total Categories</h3>
+                                <h1>{{ $totalCategories }}</h1>
                             </div>
 
                             <div class="progress">
                                 <svg>
                                     <circle  r="30" cy="40" cx="40"></circle>
                                 </svg>
-                                <div class="number"><p>80%</p></div>
+                                <div class="number"><p>{{ round($categoryPercentage) }}%</p></div>
                             </div>
 
                         </div>
-                        <small>Last 24 Hours</small>
                     </div>
 
                     <div class="expenses" style="border-radius: 2rem; margin:2rem;">
-                        <span class="material-symbols-sharp">local_mall</span>
+                        <span class="material-symbols-sharp">receipt_long </span>
                         <div class="middle">
-        
                             <div class="left">
-                                <h3>Total Sales</h3>
-                                <h1>$25,024</h1>
+                                <h3>Total Products</h3>
+                                <h1>..</h1>
                             </div>
 
                             <div class="progress">
                                 <svg>
                                     <circle  r="30" cy="40" cx="40"></circle>
                                 </svg>
-                                <div class="number"><p>80%</p></div>
+                                <div class="number"><p>%</p></div>
                             </div>
         
                         </div>
-                        <small>Last 24 Hours</small>
                     </div>
 
                     <div class="income" style="border-radius: 2rem; margin:2rem;">
-                        <span class="material-symbols-sharp">stacked_line_chart</span>
+                        <span class="material-symbols-sharp">shopping_bag</span>
                         <div class="middle">
         
                             <div class="left">
-                                <h3>Total Sales</h3>
-                                <h1>$25,024</h1>
+                                <h3>Total Orders</h3>
+                                <h1>{{ $totalOrders }}</h1>
                             </div>
                             <div class="progress">
                                 <svg>
                                     <circle  r="30" cy="40" cx="40"></circle>
                                 </svg>
-                                <div class="number"><p>80%</p></div>
+                                <div class="number"><p>{{ round($orderPercentage) }}%</p></div>
                             </div>
         
                         </div>
-                        <small>Last 24 Hours</small>
                     </div>
                 </div>
 
@@ -183,6 +180,7 @@
                                 <th>Product Number</th>
                                 <th>Payments</th>
                                 <th>Status</th>
+                                <th></th>
                             </tr>
                         </thead>
 
@@ -192,26 +190,26 @@
                                 <td>4563</td>
                                 <td>Due</td>
                                 <td class="warning">Pending</td>
-                                <td class="primary">Details</td>
+                                <td class="primary"><span class="material-symbols-sharp">open_in_new</span></td>
                             </tr>
                             <tr>
                                 <td>Mini USB</td>
                                 <td>4563</td>
                                 <td>Due</td>
                                 <td class="warning">Pending</td>
-                                <td class="primary">Details</td>
+                                <td class="primary"><span class="material-symbols-sharp">open_in_new</span></td>
                             </tr>
                             <tr>
                                 <td>Mini USB</td>
                                 <td>4563</td>
                                 <td>Due</td>
                                 <td class="warning">Pending</td>
-                                <td class="primary">Details</td>
+                                <td class="primary"><span class="material-symbols-sharp">open_in_new</span></td>
                             </tr>
                         
                         </tbody>
                     </table>
-                    <a href="#">Show All</a>
+                    <!-- <a href="#">Show All</a> -->
                 </div>
 
             </main>

@@ -1,9 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;0,600;0,700;0,800;1,600&display=swap');
 
-
-/* variables */
-
-
 :root {
   --clr-primary: #7380ec;
   --clr-danger: #ff7782;
@@ -40,8 +36,6 @@
   --box-shadow: 0 2rem 3rem var(--clr-light)
 }
 
-
-
 *{
   margin: 0;
   padding: 0;
@@ -53,13 +47,13 @@
 }
 
 body{
-   width: 100vw;
-   height: 100vh;
-   font-size: .7rem;
-   user-select: none;
-   overflow-x: hidden;
-   background: var(--clr-color-background);
-   font-family: 'Poppins', sans-serif;
+  width: 100vw;
+  height: 100vh;
+  font-size: .7rem;
+  user-select: none;
+  overflow-x: hidden;
+  background: var(--clr-color-background);
+  font-family: 'Poppins', sans-serif;
 }
 
 .container  {
@@ -108,9 +102,6 @@ p{
 b{
   color: var(--clr-dark);
 }
-.primary {
-  color: var(--clr-primary);
-}
 
 .success {
   color: var(--clr-success);
@@ -129,47 +120,50 @@ b{
  /* aside{
   height: 180vh;
  } */
- aside .top{
+
+aside .top{
   background: var(--clr-white);
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-top: 1.7rem;
- }
+}
 
- aside .logo{
-   display: flex;
-   gap: 1rem;
- }
- aside .logo img{
-   width: 2rem;
-   height: 2rem;
- }
- aside .top div.close span{
-   display: none;
- }
+aside .logo{
+  display: flex;
+  gap: 1rem;
+}
+
+aside .logo img{
+  width: 2rem;
+  height: 2rem;
+}
+
+aside .top div.close span{
+  display: none;
+}
 
  /* ===================
  Sidebar
  ================== */
 .sous_sidebar{
-    margin-top: 1rem;
+  margin-top: 1rem;
 }
 
- aside .sidebar{
+aside .sidebar{
   background: var(--clr-white);
   display: flex;
   flex-direction: column;
   height: 98vh;
   position: relative;
   top: 1rem;
- }
+}
 
- aside h3{
+aside h3{
   font-weight: 500;
- }
+}
 
- aside .sidebar a{
+aside .sidebar a{
   display: flex;
   color: var(--clr-info-dark);
   margin-left: 2rem;
@@ -177,39 +171,38 @@ b{
   align-items: center;
   height: 3.3rem;
   transition: all .1s ease;
- 
- }
+}
 
- aside .sidebar a span{
+aside .sidebar a span{
   font-size: 1.6rem;
-  transition: all .3s ease-in-out;
-  
- }
+  transition: all .3s ease-in-out; 
+}
 
- aside .sidebar a:last-child{
+aside .sidebar a:last-child{
   position: absolute;
   bottom: 1rem; 
   width: 100%;
- }
+}
 
- aside .sidebar a.active{
-   background-color: var(--clr-light);
-   color: var(--clr-primary);
-   margin-left: 0;
-   border-left: 5px solid var(--clr-primary);
-   margin-left: calc(1rem - 3px);
- }
- aside .sidebar a:hover span{
+aside .sidebar a.active{
+  background-color: var(--clr-light);
+  color: var(--clr-primary);
+  margin-left: 0;
+  border-left: 5px solid var(--clr-primary);
+  margin-left: calc(1rem - 3px);
+}
+
+aside .sidebar a:hover span{
   margin-left: 1rem;
- }
+}
 
- aside .sidebar a span.msg_count{
-   background-color: var(--clr-danger);
-   color: var(--clr-white);
-   padding: 2px 5px;
-   font-size: 11px;
-   border-radius: var(--border-radius-1);
- }
+aside .sidebar a span.msg_count{
+  background-color: var(--clr-danger);
+  color: var(--clr-white);
+  padding: 2px 5px;
+  font-size: 11px;
+  border-radius: var(--border-radius-1);
+}
 
 
  /* ************ */
@@ -241,65 +234,68 @@ b{
  --------- Main--------------
  ------------------------------ */
 
- main{
+main{
   margin-top: 1.7rem;
   width: auto;
- }
- main input {
+}
+
+main input {
   background-color: transparent;
   border: 0;
   outline: 0;
   color: var(--clr-dark);
- }
+}
 
- main .date{
-  display: inline-block;
-  background: var(--clr-white);
-  border-radius: var(--border-radius-1);
-  margin-top: 1rem;
-  padding: 0.5rem 1.6rem;
- }
+main .date{
+display: inline-block;
+background: var(--clr-white);
+border-radius: var(--border-radius-1);
+margin-top: 1rem;
+padding: 0.5rem 1.6rem;
+}
 
- #currentDate{
-    font-size: 1rem;
- }
+#currentDate{
+  font-size: 1rem;
+}
 
 main .insights{
-   display: grid;
-   grid-template-columns: repeat(3,1fr);
-   gap: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 1.5rem;
 }
+
 main .insights>div{
-   background-color: var(--clr-white);
-   padding: var(--card-padding);
-   border-radius: var(--card-border-radius);
-   margin-top: 1rem;
-   box-shadow: var(--box-shadow);
-   transition: all .3s ease;
+  background-color: var(--clr-white);
+  padding: var(--card-padding);
+  border-radius: var(--card-border-radius);
+  margin-top: 1rem;
+  box-shadow: var(--box-shadow);
+  transition: all .3s ease;
 }
 
 main .insights > div:hover{
   box-shadow: none;
 }
 main .insights>div  span{
-   background: coral;
-    padding: 0.5rem;
-    border-radius: 50%;
-    color: var(--clr-white);
-    font-size: 2rem; 
+  background: coral;
+  padding: 0.5rem;
+  border-radius: 50%;
+  color: var(--clr-white);
+  font-size: 2rem; 
 }
 
 main .insights > div.expenses span{
-   background: var(--clr-danger);
+  background: var(--clr-danger);
 }
 main .insights > div.income span{
   background: var(--clr-success);
 }
 
 main .insights > div .middle{
-   display: flex;
-   align-items: center;
-   justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
 }
 main .insights > div .middle h1{
   font-size: 1.6rem;
@@ -318,10 +314,7 @@ main .insights p{
   color: var(--clr-dark);
 }
 main .insights h3{
-  
-    color: var(--clr-dark);
-  
-  
+  color: var(--clr-dark); 
 }
 
 main .insights .progress{
@@ -341,12 +334,12 @@ main .insights svg{
 main .insights svg circle{
   fill: none;
   stroke: var(--clr-primary);
-   transform: rotate(270,80,80);
-   stroke-width: 5;
+  transform: rotate(270,80,80);
+  stroke-width: 5;
 }
 main .insights .sales svg circle{
-   stroke-dashoffset: 0;
-   stroke-dasharray: 150;
+  stroke-dashoffset: 0;
+  stroke-dasharray: 150;
 }
 
 main .insights .expenses svg circle{
@@ -370,6 +363,7 @@ main .insights .progress .number{
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 1rem;
 }
 
 /* recent order */
@@ -384,6 +378,7 @@ main .recent_order h2{
 
 main .recent_order h2{
   margin-bottom: 0.8rem;
+  margin-left: 1rem;
 }
 
 main .recent_order th{
@@ -407,25 +402,21 @@ main .recent_order table:hover{
 }
 
 main table tbody td{
-   height: 3.8rem;
-   border-bottom: 1px solid var(--clr-white);
-   color:var(--clr-dark-variant);
-   font-size: 0.9rem;
-
-}
-
-main table tbody tr:last-child td{
-  border: none;
+  height: 3.8rem;
+  border-bottom: 1px solid var(--clr-white);
+  color:var(--clr-dark-variant);
+  font-size: 0.9rem;
 }
 
 table th, table td {
   padding: 0.8rem;
   text-align: center;
-  border-right: 1px solid var(--clr-info-light); /* Ajoute une bordure à droite */
+  border-right: 1px solid var(--clr-info-light);
+  border-bottom: 1px solid var(--clr-info-light);
 }
 
 table th {
-  background-color: var(--clr-info-light);
+  background-color: var(--clr-color-background);
   color: var(--clr-dark);
   font-weight: bold;
 }
@@ -433,7 +424,6 @@ table th {
 table tbody td:last-child {
   border-right: none; 
 }
-
 
 main .recent_order a{
   text-align: center;
@@ -593,10 +583,54 @@ Right Side
 
 }
 
+/****************************************/
+.icon-active {
+  color: var(--clr-success);
+  font-size: 2rem;
+}
+.icon-inactive {
+  color: var(--clr-danger);
+}
+
+.primary {
+  display: inline-flex;
+  /* justify-content: space-between;  */
+  align-items: center; 
+  margin-top: .7rem;
+}
+
+.action-icons {
+  border-radius: 2rem;
+  margin: 0.5rem;
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+
+  border-radius: 5rem; 
+  margin-left: .9rem;
+  margin-right: .9rem;
+  /* margin:2rem;  */
+  width: auto;
+}
+
+.ic1{
+  background: coral;
+  color: white;
+}
+
+.ic2{
+  background: var(--clr-success);
+  color: white;
+}
+
+.ic3{
+  background: var(--clr-danger);
+  color: white;
+}
 
 
-
-/* **********8
+/* **********
 MEDIA QUERY
 ****************/
 
