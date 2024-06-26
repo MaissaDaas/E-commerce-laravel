@@ -9,7 +9,7 @@ class Category extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'slug','images','is_active'];
+    protected $fillable = ['name', 'slug', 'description', 'images','is_active'];
 
     // Cette méthode définit une relation entre le modèle Category et le modèle Product.   
     public function products(){

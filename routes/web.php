@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\LoginController;
 use App\Http\Controllers\Admin\DashbordController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\AddCategoryController;
 
 
 Route::get('/', function () {
@@ -28,6 +29,9 @@ Route::get('logout', [LoginController::class,'logout'])->name('logout');
     // Route::get('/users', function () {
         Route::get('showdashbord', [DashbordController::class,'showdashbord'])->name('dashbord');
         Route::get('showcategory', [CategoryController::class,'showcategory'])->name('categoryAdmin');
+        Route::get('addcategory', [AddCategoryController::class,'addcategory'])->name('addCategoryAdmin');
+        Route::delete('/category/{id}', [CategoryController::class, 'destroy'])->name('category.destroy');
+        Route::post('createcategory', [AddCategoryController::class,'createcategory'])->name('createCategoryAdmin');
     // });
 // });
 

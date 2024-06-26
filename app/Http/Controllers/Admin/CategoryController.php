@@ -13,4 +13,13 @@ class CategoryController extends Controller
         $categories = Category::all();
         return view('dashbord.category', compact('categories'));
     }
+
+    public function destroy($id)
+    {
+        $category = Category::findOrFail($id);
+        $category->delete();
+        return redirect()->route('categoryAdmin');
+        //return response()->json('User is deleted');
+        // return redirect()->back();
+    }
 }
