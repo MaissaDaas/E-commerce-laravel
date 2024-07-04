@@ -10,14 +10,10 @@ use App\Http\Requests\LoginRequest;
 
 class UserController extends Controller
 {
-    public function index()
+    public function showuser()
     {
-        // $users = User::paginate(10);
-        // return response()->json ($users);
-
-        $users = User::all();   // récupère tous les utilisateurs.  est une méthode d'Eloquent, l'ORM (Object-Relational Mapping)
-        return view('users', compact('users'));    // Retourne une vue avec les utilisateurs passés en paramètre
-        //compact('users') est une fonction PHP qui crée un tableau associatif avec le nom de la variable ($users dans ce cas) comme clé et sa valeur actuelle comme valeur. Cela permet de transmettre la variable $users à la vue en utilisant le même nom.
+        $users = User::all();  
+        return view('dashbord.user', compact('users'));    
     }
 
     public function create(){
@@ -79,8 +75,7 @@ class UserController extends Controller
     {
         $user = User::findOrFail($id);
         $user->delete();
-        //return response()->json('User is deleted');
-        return redirect()->back();
+        return redirect()->route('userAdmin');
     }
 }
 

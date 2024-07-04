@@ -16,7 +16,7 @@
             <main style="margin-left:3rem;">
                 <a href="{{ route('categoryAdmin') }}" class="link">Categories</a>
                 <span class="arrow">&rarr;</span>
-                <a href="{{ route('addCategoryAdmin') }}" class="link">Add Categories</a>
+                <a href="{{ route('addCategoryAdmin') }}" class="link">Add Category</a>
                 <h1>Add Categories</h1>
 
                 <div class="recent_order">

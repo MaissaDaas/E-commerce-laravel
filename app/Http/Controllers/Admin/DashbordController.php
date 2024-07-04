@@ -19,14 +19,43 @@ class DashbordController extends Controller
     public function showdashbord()
     {
         $totalCategories = Category::count();
-        // $totalProducts = Product::count();
+        $totalProducts = Product::count();
         $totalOrders = Order::count();
         $goal = 100;
 
-        $categoryPercentage = $this->calculatePercentage($totalCategories, $goal);
-        // $productPercentage = $this->calculatePercentage($totalProducts, $goal);
-        $orderPercentage = $this->calculatePercentage($totalOrders, $goal);
+        $productsInStock = Product::where('in_stock', 1)->count();
+        $productsOutOfStock = Product::where('in_stock', 0)->count();
 
-        return view('dashbord.dashbord', compact('totalCategories', 'categoryPercentage',  'totalOrders', 'orderPercentage'));
+        $categoryPercentage = $this->calculatePercentage($totalCategories, $goal);
+        $productPercentage = $this->calculatePercentage($totalProducts, $goal);
+        $orderPercentage = $this->calculatePercentage($totalOrders, $goal);
+        $inStockPercentage = $this->calculatePercentage($productsInStock, $goal);
+        $outOfStockPercentage = $this->calculatePercentage($productsOutOfStock, $goal);
+
+        // Count orders by status
+        $statuses = ['new', 'processing', 'shipped', 'delivered', 'canceled'];
+        $orderCountsByStatus = [];
+        foreach ($statuses as $status) {
+            $orderCountsByStatus[$status] = Order::where('status', $status)->count();
+        }
+
+        $orderStatusCounts = Order::select('status', \DB::raw('count(*) as total'))
+                             ->groupBy('status')
+                             ->get();
+
+        return view('dashbord.dashbord', 
+            compact('totalCategories', 
+            'categoryPercentage', 
+            'totalProducts', 
+            'productPercentage',  
+            'totalOrders', 
+            'orderPercentage' , 
+            'productsInStock',
+            'productsOutOfStock',
+            'inStockPercentage',
+            'outOfStockPercentage',
+            'orderCountsByStatus',
+            'orderStatusCounts',
+        ));
     }
 }

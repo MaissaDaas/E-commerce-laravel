@@ -83,15 +83,15 @@ class LoginController extends Controller
 
         //dd('success');
         return redirect()->route('login_form')->with('success', 'User successfully registered');
-
     }
     
-    public function logout()
+    public function logout(Request $request)
     {
         Auth::logout();
-        Session::flush();
-        return redirect()->route('login_form');
+ 
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
 
-       // return redirect('login_form');
+        return redirect()->route('login_form');
     }
 }

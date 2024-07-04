@@ -20,37 +20,37 @@
                 <h3>Dashbord</h3>
             </a>
 
-            <a href="{{ route('categoryAdmin') }}" class="{{ Request::is('showcategory') ? 'active' : '' }}">
+            <a href="{{ route('categoryAdmin') }}" class="{{ Request::is('admin/showcategory') ? 'active' : '' }}">
                 <span class="material-symbols-sharp">category</span>
                 <h3>Categories</h3>
             </a>
 
-            <a href="{{ route('addCategoryAdmin') }}" class="{{ Request::is('addcategory') ? 'active' : '' }}">
+            <a href="{{ route('addCategoryAdmin') }}" class="{{ Request::is('admin/addcategory') ? 'active' : '' }}">
                 <span class="material-symbols-sharp">add </span>
                 <h3>Add category</h3>
             </a>
 
-            <a href="#">
+            <a href="{{ route('productAdmin') }}" class="{{ Request::is('admin/showproduct') ? 'active' : '' }}">
                 <span class="material-symbols-sharp">receipt_long </span>
                 <h3>Products</h3>
             </a>
 
-            <a href="#">
+            <a href="{{ route('addProductAdmin') }}" class="{{ Request::is('admin/addproduct') ? 'active' : '' }}">
                 <span class="material-symbols-sharp">add </span>
                 <h3>Add Product</h3>
             </a>
 
-            <a href="#">
+            <a href="{{ route('orderAdmin') }}" class="{{ Request::is('admin/showorder') ? 'active' : '' }}">
                 <span class="material-symbols-sharp">shopping_bag</span>
                 <h3>Orders</h3>
             </a>
 
-            <a href="#">
+            <a href="{{ route('userAdmin') }}" class="{{ Request::is('admin/showuser') ? 'active' : '' }}">
                 <span class="material-symbols-sharp">person_outline </span>
                 <h3>Users</h3>
             </a>
 
-            <a href="{{ route('login_form') }}">
+            <a href="{{ route('logout') }}">
                 <span class="material-symbols-sharp">logout </span>
                 <h3>logout</h3>
             </a>

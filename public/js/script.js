@@ -1,9 +1,9 @@
 const  sideMenu = document.querySelector('aside');
 const menuBtn = document.querySelector('#menu_bar');
 const closeBtn = document.querySelector('#close_btn');
-
 const themeToggler = document.querySelector('.theme-toggler');
 
+// *********Sidebar menu toggle
 menuBtn.addEventListener('click',()=>{
        sideMenu.style.display = "block"
 })
@@ -11,12 +11,14 @@ closeBtn.addEventListener('click',()=>{
     sideMenu.style.display = "none"
 })
 
+// *********Theme toggle
 themeToggler.addEventListener('click',()=>{
      document.body.classList.toggle('dark-theme-variables')
      themeToggler.querySelector('span:nth-child(1').classList.toggle('active')
      themeToggler.querySelector('span:nth-child(2').classList.toggle('active')
 })
 
+// *********Set current date input value
 document.addEventListener('DOMContentLoaded', function() {
     const dateInput = document.getElementById('currentDate');
     const today = new Date();
@@ -27,18 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
     dateInput.value = formattedDate;
 });
 
-
-
-document.addEventListener('DOMContentLoaded', function() {
-    const dateInput = document.getElementById('currentDate');
-    const today = new Date();
-    const yyyy = today.getFullYear();
-    const mm = String(today.getMonth() + 1).padStart(2, '0'); 
-    const dd = String(today.getDate()).padStart(2, '0');
-    const formattedDate = `${yyyy}-${mm}-${dd}`;
-    dateInput.value = formattedDate;
-});
-
+// Dropdown submenu toggle
 document.addEventListener('DOMContentLoaded', function() {
     const categoriesLink = document.getElementById('categories-link');
     const categoriesSubmenu = document.getElementById('categories-submenu');
@@ -50,8 +41,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+// More icon popup toggle
 const moreIcons = document.querySelectorAll('.more-icon');
-
 moreIcons.forEach(icon => {
     icon.addEventListener('click', function(e) {
         e.stopPropagation(); 
@@ -69,7 +60,7 @@ moreIcons.forEach(icon => {
     });
 });
 
-/*  ***** popup ******/
+// ********* Close all popups
 function closeAllPopups() {
     const popups = document.querySelectorAll('.popup');
     popups.forEach(popup => {
@@ -90,27 +81,91 @@ document.querySelectorAll('.popup').forEach(popup => {
     });
 });
 
-const editButtons = document.querySelectorAll('.edit-button');
-editButtons.forEach(button => {
-    button.addEventListener('click', function() {
-        const categoryId = this.getAttribute('data-category-id');
-        const modal = document.getElementById('modal_' + categoryId);
-        modal.style.display = "block";
-        closeAllPopups();
+
+// Edit and view button modals 
+
+document.addEventListener('DOMContentLoaded', function() {
+
+    //************** category edit modal
+    const editButtons = document.querySelectorAll('.edit-button');
+    editButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const categoryId = this.getAttribute('data-category-id');
+            const modal = document.getElementById('modal_' + categoryId);
+            modal.style.display = "block";
+            closeAllPopups();
+        });
+    });
+
+    //************** product edit modal
+    const editButtonsProduct = document.querySelectorAll('.edit-button');
+    editButtonsProduct.forEach(button => {
+        button.addEventListener('click', function() {
+            const productId = this.getAttribute('data-product-id');
+            const modal = document.getElementById('modal_' + productId);
+            modal.style.display = "block";
+            closeAllPopups();
+        });
+    });
+
+    //************** order edit modal
+    const editButtonsOrder = document.querySelectorAll('.edit-button');
+    editButtonsOrder.forEach(button => {
+        button.addEventListener('click', function() {
+            const orderId = this.getAttribute('data-order-id');
+            const modal = document.getElementById('modal_' + orderId);
+            modal.style.display = "block";
+            closeAllPopups();
+        });
+    });
+
+
+    //************** category view modal
+    const viewButtons = document.querySelectorAll('.view-button');
+    viewButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const categoryId = this.getAttribute('data-category-id');
+            const modal_view = document.getElementById('modal_view' + categoryId);
+            modal_view.style.display = "block";
+            closeAllPopups();
+        });
+    });
+
+    //************** product view modal
+    const viewButtonsProduct = document.querySelectorAll('.view-button');
+    viewButtonsProduct.forEach(button => {
+        button.addEventListener('click', function() {
+            const productId = this.getAttribute('data-product-id');
+            const modal_view = document.getElementById('modal_view' + productId);
+            modal_view.style.display = "block";
+            closeAllPopups();
+        });
+    });
+
+    //************** order view modal
+    const viewButtonsOrder = document.querySelectorAll('.view-button');
+    viewButtonsOrder.forEach(button => {
+        button.addEventListener('click', function() {
+            const orderId = this.getAttribute('data-order-id');
+            const modal_view = document.getElementById('modal_view' + orderId);
+            modal_view.style.display = "block";
+            closeAllPopups();
+        });
+    });
+
+    //************** user view modal
+    const viewButtonsUser = document.querySelectorAll('.view-button');
+    viewButtonsUser.forEach(button => {
+        button.addEventListener('click', function() {
+            const userId = this.getAttribute('data-user-id');
+            const modal_view = document.getElementById('modal_view' + userId);
+            modal_view.style.display = "block";
+            closeAllPopups();
+        });
     });
 });
 
-const viewButtons = document.querySelectorAll('.view-button');
-viewButtons.forEach(button => {
-    button.addEventListener('click', function() {
-        const categoryId = this.getAttribute('data-category-id');
-        const modal_view = document.getElementById('modal_view' + categoryId);
-        modal_view.style.display = "block";
-        closeAllPopups();
-    });
-});
-
-
+// Close modals
 closeButtons = document.querySelectorAll('.close');
 closeButtons.forEach(button => {
     button.addEventListener('click', function() {
@@ -119,6 +174,15 @@ closeButtons.forEach(button => {
     });
 });
 
+closeButtons = document.querySelectorAll('.cancel__button');
+closeButtons.forEach(button => {
+    button.addEventListener('click', function() {
+        const modal = this.closest('.modal');
+        modal.style.display = "none";
+    });
+});
+
+// Click outside modal to close
 window.onclick = function(event) {
     const modals = document.querySelectorAll('.modal');
     modals.forEach(modal => {
@@ -176,10 +240,38 @@ window.onclick = function(event) {
     }
 }
 
+//is active edit 
+function toggleIsActive(categoryId, isActive) {
+    const isActiveSpan = document.getElementById('isActive_' + categoryId);
+    const newIsActive = isActive ? 0 : 1; // Inverser l'état actuel
+
+    // Envoi d'une requête AJAX pour mettre à jour l'état dans la base de données
+    fetch('/admin/category/updateIsActive/' + categoryId + '?isActive=' + newIsActive, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRF-TOKEN': '{{ csrf_token() }}'
+            },
+            // body: JSON.stringify({ isActive: newIsActive }) // Utilisation de JSON si nécessaire
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                isActiveSpan.classList.toggle('icon-active', newIsActive === 1);
+                isActiveSpan.classList.toggle('icon-inactive', newIsActive === 0);
+                isActiveSpan.textContent = newIsActive === 1 ? 'check_circle' : 'cancel';
+            } else {
+                console.error('Erreur lors de la mise à jour de l\'état.');
+            }
+        })
+        .catch(error => console.error('Erreur:', error));
+}
 
 
-
-
-
+/* **************************** */
+function updateCheckboxValue(input) {
+    var spanText = input.nextElementSibling.innerText; // Récupère le texte du span voisin
+    input.value = input.checked ? spanText : ''; // Met à jour la valeur de l'input checkbox
+}
 
 

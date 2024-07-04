@@ -16,6 +16,10 @@ class Product extends Model
         'images' => 'array',
     ];
 
+    protected $attributes = [
+        'brand_id' => 1, 
+    ];
+
     public function category(){
         return $this->belongsTo(category::class);
     }
