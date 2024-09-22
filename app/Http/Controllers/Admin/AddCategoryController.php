@@ -30,7 +30,7 @@ class AddCategoryController extends Controller
             // 'image' => $request->hasFile('image') ? $request->file('image')->store('categories', 'public') : null,
         ]);
 
-        return redirect()->route('dashbord.addCategory')->with('success', 'Category successfully registered');
+        return redirect()->route('addCategoryAdmin')->with('success', 'Category successfully registered');
     }
 
 

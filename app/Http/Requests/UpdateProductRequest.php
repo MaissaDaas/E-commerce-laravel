@@ -21,10 +21,12 @@ class UpdateProductRequest extends FormRequest
                 'between:2,100', 
                 'regex:/^[a-zA-Z0-9]+(?:-[a-zA-Z0-9]+)*$/',
             ],            
-            'description' => 'required|nullable|string|max:500',
+            'description' => 'required|nullable|string|max:3000',
             'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048', 
             'price' => 'required|min:0',
+            'discount_amount' => 'numeric|min:0',
             'category_id' => 'required|exists:categories,id',
+            'brand_id' => 'required|exists:brands,id',
         ];
     }
 }

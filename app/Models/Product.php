@@ -9,16 +9,16 @@ class Product extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['category_id','brand_id','name', 'slug','images','description','is_active','price','is_featured','in_stock','on_sale'];
+    protected $fillable = ['category_id','brand_id','name', 'slug','images','description','is_active','price','is_featured','in_stock','on_sale','discount_amount'];
 
     protected $casts =[
         // l'attribut images doit être converti en tableau. C'est utile pour stocker des données JSON dans la base de données et les manipuler facilement en tant que tableau en PHP.
         'images' => 'array',
     ];
 
-    protected $attributes = [
-        'brand_id' => 1, 
-    ];
+    // protected $attributes = [
+    //     'brand_id' => 1, 
+    // ];
 
     public function category(){
         return $this->belongsTo(category::class);

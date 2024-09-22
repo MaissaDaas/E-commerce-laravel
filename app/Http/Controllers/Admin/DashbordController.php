@@ -40,8 +40,8 @@ class DashbordController extends Controller
         }
 
         $orderStatusCounts = Order::select('status', \DB::raw('count(*) as total'))
-                             ->groupBy('status')
-                             ->get();
+            ->groupBy('status')
+            ->get();
 
         return view('dashbord.dashbord', 
             compact('totalCategories', 

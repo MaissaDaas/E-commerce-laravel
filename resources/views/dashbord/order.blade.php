@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Dashbord Admin</title>
-        <link rel="icon" href="images/logo.png" type="image/x-icon">
+        <link rel="icon" href="../images/logopara.png" type="image/x-icon">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@48,400,0,0" />
         <link rel="stylesheet" href="../../css/dashbord.css">
     </head>
@@ -78,91 +78,71 @@
                                             <div class='modal-content-order'>
                                                 <span class='close'>&times;</span>
 
-                                                <h1 class="edit-h1">View all</h1>
+                                                <h1 class="edit-h1" style="margin-top: 1vw; margin-bottom: 1vw">View all</h1>
 
-                                                <div class="add__inputs">
-                                                    <div class="add__box ">
+                                                <div class="add__inputs" style="width: 700px">
+                                                    <div class="add__box " style="margin-right: 4vw">
                                                         <h3 class="add_h" style="text-align: left;">UserName</h3>
-                                                        <input type="text" required class="add__input"
-                                                            id="name" name="name"
-                                                            value="{{ $order->user->name }}">
+                                                        <h3 class="view-h3">{{ $order->user->name }}</h3>
                                                     </div>
 
                                                     <div class="add__box ">
                                                         <h3 class="add_h" style="text-align: left;">Status</h3>
-                                                        <input type="text" required class="add__input "
-                                                            id="name" name="name"
-                                                            value="{{ $order->status }}">
+                                                        <h3 class="view-h3">{{$order->status }}</h3>
                                                     </div>
                                                 </div>
 
-                                                <div class="add__inputs">
-                                                    <div class="add__box ">
+                                                <div class="add__inputs" style="width: 700px">
+                                                    <div class="add__box " style="margin-right: 4vw">
                                                         <h3 class="add_h" style="text-align: left;">Grand total</h3>
-                                                        <input type="text" required class="add__input"
-                                                            id="name" name="name"
-                                                            value="{{ $order->grand_total }}">
+                                                        <h3 class="view-h3">{{ $order->grand_total }}</h3>
                                                     </div>
 
                                                     <div class="add__box ">
                                                         <h3 class="add_h" style="text-align: left;">Note</h3>
-                                                        <input type="text" required class="add__input"
-                                                            id="name" name="name"
-                                                            value="{{ $order->notes }} ">
+                                                        <h3 class="view-h3">{{ $order->notes }}</h3>
                                                     </div>
                                                 </div>
 
-                                                <div class="add__inputs">
-                                                    <div class="add__box ">
+                                                <div class="add__inputs" style="width: 700px">
+                                                    <div class="add__box " style="margin-right: 4vw">
                                                         <h3 class="add_h" style="text-align: left;">Payment Method</h3>
-                                                        <input type="text" required class="add__input"
-                                                            id="name" name="name"
-                                                            value="{{ $order->payment_method }}">
+                                                        <h3 class="view-h3">{{$order->payment_method }}</h3>
                                                     </div>
 
                                                     <div class="add__box ">
                                                         <h3 class="add_h" style="text-align: left;">Payment Status</h3>
-                                                        <input type="text" required class="add__input"
-                                                            id="name" name="name"
-                                                            value="{{ $order->payment_status }}">
+                                                        <h3 class="view-h3">{{ $order->payment_status }}</h3>
                                                     </div>
                                                 </div>
 
-                                                <div class="add__inputs">
-                                                    <div class="add__box ">
+                                                <div class="add__inputs" style="width: 700px">
+                                                    <div class="add__box " style="margin-right: 4vw">
                                                         <h3 class="add_h" style="text-align: left;">Shipping Amount</h3>
-                                                        <input type="text" required class="add__input"
-                                                            id="name" name="name"
-                                                            value="{{ $order->shipping_amount }}">
+                                                        <h3 class="view-h3">{{ $order->shipping_amount }}</h3>
                                                     </div>
 
                                                     <div class="add__box ">
                                                         <h3 class="add_h" style="text-align: left;">Shipping Method</h3>
-                                                        <input type="text" required class="add__input"
-                                                            id="name" name="name"
-                                                            value="{{ $order->shipping_method }}">
+                                                        <h3 class="view-h3">{{ $order->shipping_method }}</h3>
                                                     </div>
                                                 </div>
 
-                                                <div class="add__inputs">
-                                                    <div class="add__box ">
+                                                <div class="add__inputs" style="width: 700px">
+                                                    <div class="add__box " style="margin-right: 4vw">
                                                         <h3 class="add_h" style="text-align: left;">Created at</h3>
-                                                        <input type="text" required class="add__input"
-                                                            id="name" name="name"
-                                                            value="{{ $order->created_at }}">
+                                                        <h3 class="view-h3">{{ $order->created_at }}</h3>
                                                     </div>
 
-                                                    <div class="add__box ">
+                                                    <div class="add__box " >
                                                         <h3 class="add_h" style="text-align: left;">Updated at</h3>
-                                                        <input type="text" required class="add__input"
-                                                            id="name" name="name"
-                                                            value="{{ $order->updated_at }}">
+                                                        <h3 class="view-h3">{{ $order->updated_at }}</h3>
                                                     </div>
                                                 </div>
 
-                                                <div class="view view__box" style="">
+                                                <div class="view view__box" style="width:800px">
                                                     <h3 class="add_h" style="text-align: left;">Order Item</h3>
-                                                    <table style='margin-top: 0; width:80%'>
+                                                    <table style='margin-top: 0; '>
                                                         <thead>
                                                             <tr>
                                                                 <th>Product Name</th>
@@ -174,30 +154,26 @@
                                                         </thead>
     
                                                         <tbody>
-                                                            @foreach($orders as $order)
-                                                            @foreach($order->orderItems as $orderItem)
-                                                            <tr>
-                                                                <td>{{ $orderItem->product->name }}</td>
-                                                                <td>
-                                                                    @if($orderItem->product->images)
-                                                                    <img src="{{ asset($orderItem->product->images) }}" alt="{{ $orderItem->product->name }}" style="width: 60px; height: 60px;">
-                                                                    @else
-                                                                    No Image
-                                                                    @endif
-                                                                </td>
-                                                                <td>{{ $orderItem->unit_amount }} Dt</td>
-                                                                <td>{{ $orderItem->quantity }}</td>
-                                                                <td>{{ $orderItem->total_amount }} Dt</td>
-                                                            </tr>
-                                                            @endforeach
-                                                            @endforeach
+                                                            {{-- @foreach($orders as $order) --}}
+                                                                @foreach($order->orderItems as $orderItem)
+                                                                <tr>
+                                                                    <td>{{ $orderItem->product ? $orderItem->product->name : 'No Product' }}</td>
+                                                                    <td>
+                                                                        @if($orderItem->product->images)
+                                                                        <img src="{{ asset($orderItem->product->images) }}" alt="{{ $orderItem->product->name }}" style="width: 70px; height: auto;">
+                                                                        @else
+                                                                        No Image
+                                                                        @endif
+                                                                    </td>
+                                                                    <td>{{ $orderItem->unit_amount }} Dt</td>
+                                                                    <td>{{ $orderItem->quantity }}</td>
+                                                                    <td>{{ $orderItem->total_amount }} Dt</td>
+                                                                </tr>
+                                                                @endforeach
+                                                            {{-- @endforeach --}}
                                                         </tbody>
                                                     </table>
-                                                    {{-- <button id='openModal_all'  class="view-button" data-orderitem-id="{{ $order->id }}">
-                                                        <span class="material-symbols-sharp" style=" font-size: 1.7rem; ">open_in_new</span>
-                                                    </button> --}}
                                                 </div>
-                                               
                                             </div>
                                         </div> 
 

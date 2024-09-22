@@ -6,10 +6,11 @@
 
       <!--=============== REMIXICONS ===============-->
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css" crossorigin="">
-
       <link rel="stylesheet" href="../css/login.css">
-
+      <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+      <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
       <title>Login</title>
+      <link rel="icon" href="../images/logopara.png" type="image/x-icon">
 
       <style>
         .error-message {
@@ -21,22 +22,17 @@
      </style>
    </head>
    <body>
+      <!-- Navigation -->
+      @include('paralux.navigation')
+
+      <div class="categorie-title">
+         <span class="span-category">Login</span>
+     </div>
+
       <div class="login">
-         <!-- <img src="assets/img/login-bg.png" alt="image" class="login__bg"> -->
-
-         <!-- @if ($errors->any())
-            <div class="alert alert-danger">
-               <ul>
-                     @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                     @endforeach
-               </ul>
-            </div>
-         @endif -->
-
          <form action="{{ route('admin_login') }}" method="POST" class="login__form" encrypt="multipart/form-data">
             @csrf   
-            <h1 class="login__title">Login</h1>
+            {{-- <h1 class="login__title">Login</h1> --}}
 
             <div class="login__inputs">
                <div class="login__box @error('email') input-error @enderror">
@@ -73,5 +69,8 @@
             </div>
          </form>
       </div>
+
+      <!-- footer -->
+    @include('paralux.footer')
    </body>
 </html>

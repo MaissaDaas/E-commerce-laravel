@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Dashbord Admin</title>
-        <link rel="icon" href="images/logo.png" type="image/x-icon">
+        <link rel="icon" href="../images/logopara.png" type="image/x-icon">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@48,400,0,0" />
         <link rel="stylesheet" href="../../css/dashbord.css">
     </head>
@@ -45,10 +45,23 @@
                         </div>
 
                         <div class="add__inputs">
-                            <div class="add__box @error('price') input-error @enderror">
+                            {{-- <div class="add__box @error('price') input-error @enderror">
                                 <h3 class="add_h">Price</h3>
                                 <input type="text"  required class="add__input" id="price" name="price" value="{{ old('price') }}">
                                 @error('price')
+                                    <div class="error-message">{{ $message }}</div>
+                                @enderror
+                            </div> --}}
+
+                            <div class="add__box @error('brand_id') input-error @enderror">
+                                <h3 class="add_h">Brand</h3>
+                                <select required class="add__input" id="brand_id" name="brand_id">
+                                    <option value="">Select a brand</option>
+                                    @foreach($brands as $brand)
+                                        <option value="{{ $brand->id }}" {{ old('brand_id') == $brand->id ? 'selected' : '' }}>{{ $brand->name }}</option>
+                                    @endforeach
+                                </select>
+                                @error('brand_id')
                                     <div class="error-message">{{ $message }}</div>
                                 @enderror
                             </div>
@@ -75,6 +88,24 @@
                             @enderror
                         </div>
                        
+                        <div class="add__inputs">
+                            <div class="add__box @error('price') input-error @enderror">
+                                <h3 class="add_h">Price</h3>
+                                <input type="text"  required class="add__input" id="price" name="price" value="{{ old('price') }}">
+                                @error('price')
+                                    <div class="error-message">{{ $message }}</div>
+                                @enderror
+                            </div>
+
+                            <div class="add__box @error('discount_amount') input-error @enderror">
+                                <h3 class="add_h">Discount Amount</h3>
+                                <input type="text"  required class="add__input" id="discount_amount" name="discount_amount" value="{{ old('discount_amount') }}">
+                                @error('discount_amount')
+                                    <div class="error-message">{{ $message }}</div>
+                                @enderror
+                            </div>   
+                        </div>
+
                         <div class="add__box @error('image') input-error @enderror">
                             <h3 class="add_h">Image</h3>
                             <input type="file" class="" id="image" name="image" style="margin-top:5x">

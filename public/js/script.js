@@ -83,9 +83,7 @@ document.querySelectorAll('.popup').forEach(popup => {
 
 
 // Edit and view button modals 
-
 document.addEventListener('DOMContentLoaded', function() {
-
     //************** category edit modal
     const editButtons = document.querySelectorAll('.edit-button');
     editButtons.forEach(button => {
@@ -118,6 +116,17 @@ document.addEventListener('DOMContentLoaded', function() {
             closeAllPopups();
         });
     });
+
+        //************** brand edit modal
+        const editButtonsBrand = document.querySelectorAll('.edit-button');
+        editButtonsBrand.forEach(button => {
+            button.addEventListener('click', function() {
+                const brandId = this.getAttribute('data-brand-id');
+                const modal = document.getElementById('modal_' + brandId);
+                modal.style.display = "block";
+                closeAllPopups();
+            });
+        });
 
 
     //************** category view modal
@@ -152,6 +161,17 @@ document.addEventListener('DOMContentLoaded', function() {
             closeAllPopups();
         });
     });
+
+        //************** brand view modal
+        const viewButtonsBrand = document.querySelectorAll('.view-button');
+        viewButtonsBrand.forEach(button => {
+            button.addEventListener('click', function() {
+                const brandId = this.getAttribute('data-brand-id');
+                const modal_view = document.getElementById('modal_view' + brandId);
+                modal_view.style.display = "block";
+                closeAllPopups();
+            });
+        });
 
     //************** user view modal
     const viewButtonsUser = document.querySelectorAll('.view-button');

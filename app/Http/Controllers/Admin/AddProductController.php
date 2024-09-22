@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Category; 
+use App\Models\Brand;
 use App\Models\Product; 
 use App\Http\Requests\ProductRequest;
 
@@ -13,7 +14,8 @@ class AddProductController extends Controller
     public function addproduct()
     {
         $categories = Category::all();
-        return view('dashbord.addproduct', compact('categories'));
+        $brands = Brand::all();
+        return view('dashbord.addproduct', compact('categories', 'brands'));
     }
 
     public function createproduct(ProductRequest $request)
@@ -26,10 +28,12 @@ class AddProductController extends Controller
         $product = Product::create([
             'name' => $validated['name'],
             'slug' => $validated['slug'],
-            'brand_id'=>1,
+            // 'brand_id'=>1,
             'description' => $validated['description'],
             'price' => $validated['price'],
             'category_id' => $validated['category_id'],
+            'brand_id' => $validated['brand_id'],
+            'discount_amount' => $validated['discount_amount'],
             'images' => 'images/'. $imageName,
         ]);
 

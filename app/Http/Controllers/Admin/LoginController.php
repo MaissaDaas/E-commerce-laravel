@@ -24,35 +24,19 @@ class LoginController extends Controller
 
     public function login(LoginRequest $request)
     {
-        // $credentials = request(['email', 'password']); 
-        
-        // Validate the form data
-        // $request->validate([
-        //     'email' => 'required|email',
-        //     'password' => 'required',
-        // ]);
-
-        // dd($request->all());
-
         $validated = $request->validated();
 
-        // Extraire les informations d'identification de la requête
         $credentials = $request->only('email', 'password'); 
 
-
-        // Vérifier si l'email est correct
         $user = User::where('email', $credentials['email'])->first();
         if (!$user) {
             return redirect()->route('login_form')->withErrors(['email' => 'Incorrect email'])->withInput();
         }
     
-        // Vérifier si le mot de passe est correct
         if (!Auth::attempt($credentials)) {
             return redirect()->route('login_form')->withErrors(['password' => 'Incorrect password'])->withInput();
         }
 
-
-        // Se connecter avec les informations d'identification
         if (Auth::attempt($credentials)) {
             $user = Auth::user();
 
@@ -61,9 +45,10 @@ class LoginController extends Controller
                 return redirect()->route('dashbord');
             }
             else{
-                dd('user');
-                // Auth::logout();
-                // return response()->json('you are not an admin', 403);
+                \Log::info('Redirecting to user home');
+                return redirect()->route('home');
+                // return redirect()->route('admin.home');
+                //dd('user');
             }
         }
     }

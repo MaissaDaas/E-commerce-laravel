@@ -6,10 +6,11 @@
 
       <!--=============== REMIXICONS ===============-->
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css" crossorigin="">
-
       <link rel="stylesheet" href="../css/login.css">
-
+      <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+      <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
       <title>Sign Up</title>
+      <link rel="icon" href="../images/logopara.png" type="image/x-icon">
 
       <style>
         .error-message {
@@ -33,13 +34,16 @@
      </style>
    </head>
    <body>
-      <div class="login">
-         <!-- <img src="assets/img/login-bg.png" alt="image" class="login__bg"> -->
+      <!-- Navigation -->
+      @include('paralux.navigation')
 
+      <div class="categorie-title">
+         <span class="span-category">Sign Up</span>
+     </div>
+
+      <div class="register">
          <form action="{{ route('admin_register') }}" method="POST" class="register__form" enctype="multipart/form-data">
             @csrf   
-            <h1 class="login__title">Sign Up</h1>
-
             <div class="login__inputs">
 
                 <div class="login__box @error('name') input-error @enderror">
@@ -82,6 +86,9 @@
       </div>
       @endif
 
+      <!-- footer -->
+    @include('paralux.footer')
+
       <script>
          document.addEventListener('DOMContentLoaded', function() {
             const successMessage = '{{ session('success') }}';
@@ -96,6 +103,8 @@
             }
          });
       </script>
+
+
 
    </body>
 </html>

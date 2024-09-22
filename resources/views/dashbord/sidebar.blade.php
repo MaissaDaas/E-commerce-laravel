@@ -15,7 +15,7 @@
         </div>
 
         <div class="sous_sidebar">
-            <a href="{{ route('dashbord') }}" class="{{ Request::is('showdashbord') ? 'active' : '' }}">
+            <a href="{{ route('dashbord') }}" class="{{ Request::is('admin/showdashbord') ? 'active' : '' }}">
                 <span class="material-symbols-sharp">grid_view </span>
                 <h3>Dashbord</h3>
             </a>
@@ -28,6 +28,16 @@
             <a href="{{ route('addCategoryAdmin') }}" class="{{ Request::is('admin/addcategory') ? 'active' : '' }}">
                 <span class="material-symbols-sharp">add </span>
                 <h3>Add category</h3>
+            </a>
+
+            <a href="{{ route('brandAdmin') }}" class="{{ Request::is('admin/showbrand') ? 'active' : '' }}">
+                <span class="material-symbols-sharp">branding_watermark</span>
+                <h3>Brands</h3>
+            </a>
+
+            <a href="{{ route('addBrandAdmin') }}" class="{{ Request::is('admin/addbrand') ? 'active' : '' }}">
+                <span class="material-symbols-sharp">add </span>
+                <h3>Add brand</h3>
             </a>
 
             <a href="{{ route('productAdmin') }}" class="{{ Request::is('admin/showproduct') ? 'active' : '' }}">

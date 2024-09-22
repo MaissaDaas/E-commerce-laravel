@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Dashbord Admin</title>
-        <link rel="icon" href="images/logo.png" type="image/x-icon">
+        <link rel="icon" href="../images/logopara.png" type="image/x-icon">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@48,400,0,0" />
         <link rel="stylesheet" href="../../css/dashbord.css">
     </head>
@@ -95,10 +95,7 @@
                     dropdown.classList.toggle('active');
                 });
             });
-
-
-
-
+            
             document.addEventListener('DOMContentLoaded', function() {
                 const moreIcons = document.querySelectorAll('.more-icon');
         

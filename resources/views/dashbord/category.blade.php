@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashbord Admin</title>
-    <link rel="icon" href="images/logo.png" type="image/x-icon">
+    <link rel="icon" href="../images/logopara.png" type="image/x-icon">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@48,400,0,0" />
     <link rel="stylesheet" href="../../css/dashbord.css">
@@ -51,7 +51,7 @@
                                 <td>
                                     @if ($category->images)
                                         <img src="{{ asset($category->images) }}" alt="{{ $category->name }}"
-                                            style="width: 60px; height: 60px;">
+                                            style="width: 6vw; height: auto;">
                                     @else
                                         No Image
                                     @endif
@@ -112,7 +112,7 @@
 
                                             <div class="add__box">
                                                 @if ($category->images)
-                                                    <img src="{{ asset($category->images) }}" alt="{{ $category->name }}" style="width: 80px; height: 80px; margin-bottom: 5px;">
+                                                    <img src="{{ asset($category->images) }}" alt="{{ $category->name }}" style="width: 6vw; height: auto; margin-bottom: 7px; padding-bottom: 1vw">
                                                     <input type="hidden" name="current_image"
                                                         value="{{ $category->images }}">
                                                 @else
@@ -120,42 +120,34 @@
                                                 @endif
                                             </div>
 
-                                            <div class="add__inputs">
+                                            <div class="add__inputs" style="width: 390px">
                                                 <div class="add__box">
                                                     <h3 class="add_h" style="text-align: left;">Name</h3>
-                                                    <input type="text" required class="add__input"
-                                                        id="name" name="name"
-                                                        value="{{ $category->name }}">
+                                                    <h3 class="view-h3">{{ $category->name }}</h3>
                                                 </div>
 
                                                 <div class="add__box">
                                                     <h3 class="add_h" style="text-align: left;">Slug</h3>
-                                                    <input type="text" required class="add__input"
-                                                        id="slug" name="slug"
-                                                        value="{{ $category->slug }}">
+                                                    <h3 class="view-h3">{{ $category->slug }}</h3>
                                                 </div>
                                             </div>
 
                                             <div class="add__inputs">
                                                 <div class="add__box" style="width: 390px">
                                                     <h3 class="add_h" style="text-align: left;">Description</h3>
-                                                    <textarea required class="add__input add__input__description" id="description" name="description">{{ $category->description }}</textarea>
+                                                    <h3 class="view-h3">{{ $category->description }}</h3>
                                                 </div>                                             
                                             </div>
 
-                                            <div class="add__inputs">
-                                                <div class="add__box">
+                                            <div class="add__inputs" style="width: 390px">
+                                                <div class="add__box" style="width: 300px">
                                                     <h3 class="add_h" style="text-align: left;">Created at</h3>
-                                                    <input type="text" required class="add__input"
-                                                        id="name" name="name"
-                                                        value="{{ $category->created_at }}">
+                                                    <h3 class="view-h3">{{ $category->created_at }}</h3>
                                                 </div>
 
                                                 <div class="add__box">
                                                     <h3 class="add_h" style="text-align: left;">Updated at</h3>
-                                                    <input type="text" required class="add__input"
-                                                        id="slug" name="slug"
-                                                        value="{{ $category->updated_at }}">
+                                                    <h3 class="view-h3">{{ $category->updated_at }}</h3>
                                                 </div>
                                             </div>
 
@@ -174,7 +166,7 @@
 
                                     <!-- ******************************edit modal******************* -->
                                     <div id='modal_{{ $category->id }}' class='modal'>
-                                        <div class='modal-content' style=" padding-top: 20px; height:650px;">
+                                        <div class='modal-content' style=" padding-top: 20px; height:auto;">
                                             <span class='close'>&times;</span>
 
                                             <h1 class="edit-h1" style="padding-bottom: 20px">Edit Category</h1>
@@ -185,7 +177,7 @@
                                                 @csrf
                                                 <div class="add__box">
                                                     @if ($category->images)
-                                                        <img src="{{ asset($category->images) }}" alt="{{ $category->name }}" style="width: 80px; height: 80px; margin-bottom: 5px;">
+                                                        <img src="{{ asset($category->images) }}" alt="{{ $category->name }}" style="width: 6vw; height: auto; margin-bottom: 5px;">
                                                         <input type="hidden" name="current_image"
                                                             value="{{ $category->images }}">
                                                     @else

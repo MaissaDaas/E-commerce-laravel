@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Dashbord Admin</title>
-        <link rel="icon" href="images/logo.png" type="image/x-icon">
+        <link rel="icon" href="../images/logopara.png" type="image/x-icon">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@48,400,0,0" />
         <link rel="stylesheet" href="../../css/dashbord.css">
     </head>
@@ -71,42 +71,32 @@
 
                                                 <h1 class="edit-h1">View all</h1>
 
-                                                <div class="add__inputs">
+                                                <div class="add__inputs" style="width: 380px;">
                                                     <div class="add__box">
                                                         <h3 class="add_h" style="text-align: left;">Name</h3>
-                                                        <input type="text" required class="add__input"
-                                                            id="name" name="name"
-                                                            value="{{ $user->name }}">
+                                                        <h3 class="view-h3">{{ $user->name }}</h3>
                                                     </div>
 
                                                     <div class="add__box">
                                                         <h3 class="add_h" style="text-align: left;">Role</h3>
-                                                        <input type="text" required class="add__input"
-                                                            id="slug" name="slug"
-                                                            value="{{ $user->role }}">
+                                                        <h3 class="view-h3">{{ $user->role }}</h3>
+                                                    </div>
+
+                                                    <div class="add__box" >
+                                                        <h3 class="add_h" style="text-align: left;">Email</h3>
+                                                        <h3 class="view-h3">{{ $user->email }}</h3>
                                                     </div>
                                                 </div>
 
-                                                <div class="add__box" style="width: 390px;">
-                                                    <h3 class="add_h" style="text-align: left;">Email</h3>
-                                                    <input type="text" required class="add__input"
-                                                        id="name" name="name"
-                                                        value="{{ $user->email }}">
-                                                </div>
-
-                                                <div class="add__inputs">
+                                                <div class="add__inputs" style="width: 380px;">
                                                     <div class="add__box">
                                                         <h3 class="add_h" style="text-align: left;">Created at</h3>
-                                                        <input type="text" required class="add__input"
-                                                            id="name" name="name"
-                                                            value="{{ $user->created_at }}">
+                                                        <h3 class="view-h3">{{ $user->created_at }}</h3>
                                                     </div>
 
                                                     <div class="add__box">
                                                         <h3 class="add_h" style="text-align: left;">Updated at</h3>
-                                                        <input type="text" required class="add__input"
-                                                            id="slug" name="slug"
-                                                            value="{{ $user->updated_at }}">
+                                                        <h3 class="view-h3">{{ $user->updated_at }}</h3>
                                                     </div>
                                                 </div>
                                             </div>
